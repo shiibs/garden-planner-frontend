@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-dark: #51e58f88;
+  --primary-light: #70ff7754;
+  --second-dark: #2758f8c2;
+  --second-light: #a1b7d3;
+}
+
+@layer base {
+  h1 {
+    @apply font-bold text-3xl md:text-5xl;
+  }
+
+  .learn-more-button {
+    @apply inline-flex items-center justify-center rounded-full border border-transparent text-white bg-cyan-600 px-10 py-3  text-center text-base font-medium  hover:bg-cyan-800;
+  }
+
+  .start-now-button {
+    @apply inline-flex items-center justify-center rounded-full border border-transparent text-white bg-emerald-600 px-7 py-3 text-center text-base font-medium  hover:bg-emerald-800;
+  }
+
+  .feature-box {
+    @apply border rounded-lg p-10;
+  }
+
+  .feature h3 {
+    @apply text-left font-bold  text-slate-800 pb-1;
+  }
+  .feature p {
+    @apply lg:max-w-[80%] text-sm md:text-base;
+  }
+
+  .fixedCell {
+    @apply w-[100px] h-[56px];
+  }
+  body {
+    @apply text-slate-800;
+  }
+  .garden_list {
+    @apply relative top-20 right-5 bg-neutral-800  text-center rounded-md md:p-10 p-3;
+  }
+
+  .garden_list h3 {
+    @apply text-xl p-[20px];
+  }
+
+  .garden_list ul li {
+    @apply text-green-100 my-[1px];
+  }
+
+  .step-box {
+    @apply flex justify-center gap-40 mx-auto p-10 items-center text-center;
+  }
+
+  .step h3 {
+    @apply font-bold text-2xl text-slate-800 pb-1;
+  }
+
+  .step p {
+    @apply text-sm md:text-xl;
+  }
+  .step-box img {
+    @apply w-72 h-72 object-cover mb-4;
+  }
+}
+
+.garden-item {
+  border-bottom: 1px solid gray;
+  padding-bottom: 3px;
+}
