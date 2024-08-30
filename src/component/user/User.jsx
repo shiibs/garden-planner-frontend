@@ -41,7 +41,7 @@ export default function User({ userDetails, setUserDetails }) {
           onClick={toggleDropDown}
           className="text-white md:px-4 px-2 text-base md:text-xl"
         >
-          {userDetails.userName}
+          User
         </button>
       )}
 
@@ -55,6 +55,7 @@ export default function User({ userDetails, setUserDetails }) {
             {/* Position close button absolutely */}
             <AiOutlineClose size={20} />
           </button>
+          <h3>{userDetails.userName}</h3>
           <h3>Gardens</h3>
           <ul className="my-4">
             {userDetails.gardens.length === 0 && <p>---</p>}

@@ -76,10 +76,11 @@ export default function NumberDropdown({
         onClick={() => setDropdownOpen(!dropdownOpen)}
         className="p-2 flex gap-1 border-emerald-700 border rounded-md"
       >
-        {selectedValue} <img src={dropdown} alt="" className="h-7 w-7" />
+        {selectedValue}{" "}
+        <img src={dropdown} alt="" className="md:h-7 md:w-7 h-5 w-5" />
       </button>
       {dropdownOpen && (
-        <div className="absolute bg-white border px-2">
+        <div className="absolute bg-white px-2">
           {numbers.map((number) => (
             <div
               key={number}

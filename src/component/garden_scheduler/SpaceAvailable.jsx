@@ -1,6 +1,5 @@
 import { useState } from "react";
 import VegetableList from "./VegetableList";
-import add from "../../assets/planner/add.png";
 
 export default function SpaceAvailable({
   spaceUsed,
@@ -22,7 +21,10 @@ export default function SpaceAvailable({
           Space used: {spaceUsed}/{totalSpace}{" "}
         </p>
 
-        <button className="start-now-button" onClick={togglePopup}>
+        <button
+          className="start-now-button text-sm md:text-base"
+          onClick={togglePopup}
+        >
           Add plants
         </button>
       </div>

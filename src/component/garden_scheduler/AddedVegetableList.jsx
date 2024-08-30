@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import add from "../../assets/planner/add.png";
+import remove from "../../assets/planner/minus.png";
 
 export default function AddedVegetableList({
   addedPlantList,
@@ -42,18 +44,12 @@ export default function AddedVegetableList({
               <div className="flex justify-between">
                 <p>{plant.name} </p>
                 <div className="flex gap-2">
-                  <button
-                    onClick={() => handleDecrement(plant.id)}
-                    className="border rounded-lg  px-2 py-1 border-green-600"
-                  >
-                    -
+                  <button onClick={() => handleDecrement(plant.id)}>
+                    <img src={remove} alt="" className="h-6 w-6" />
                   </button>{" "}
                   <span className="py-1">{plant.count}</span>{" "}
-                  <button
-                    onClick={() => handleIncrement(plant.id)}
-                    className="border rounded-lg  px-2 py-1 border-green-600"
-                  >
-                    +
+                  <button onClick={() => handleIncrement(plant.id)}>
+                    <img src={add} alt="" className="h-6 w-6" />
                   </button>
                 </div>
               </div>

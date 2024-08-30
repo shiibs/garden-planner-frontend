@@ -72,17 +72,17 @@ export default function GardenPlanner({ userDetails }) {
   };
 
   return (
-    <div className="mb-10  h-screen">
+    <div className="mb-10 content">
       {notification && (
         <Notification type={notification.type} message={notification.message} />
       )}
 
       {/* <Header isHomePage={false} /> */}
-      <div className="py-4">
-        <h3 className="text-center font-bold text-3xl pb-6 pt-3 text-slate-800">
+      <div className="p-4 ">
+        <h3 className="text-center font-bold text-2xl md:text-3xl pb-6 pt-3 text-slate-800">
           Garden Planner
         </h3>
-        <div className=" flex gap-3 justify-center text-xl">
+        <div className=" flex gap-2 md:gap-3 justify-center text-xl">
           <label className="pr-2">Space in Square foot</label>
           <NumberDropdown
             identifier="rows"
@@ -114,7 +114,7 @@ export default function GardenPlanner({ userDetails }) {
 
       {addedPlantList.length > 0 && (
         <div className="flex justify-center my-3">
-          <button onClick={handleConfirm} className="button py-2 px-4">
+          <button onClick={handleConfirm} className="start-now-button">
             Confirm
           </button>
         </div>

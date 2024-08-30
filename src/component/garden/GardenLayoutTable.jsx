@@ -1,24 +1,24 @@
 import React from "react";
 import {
-  TableContainer, // Make sure to import TableContainer
+  TableContainer,
   Table,
   TableRow,
   TableCell,
   TableBody,
   Paper,
-} from "@mui/material"; // Importing from @mui/material
+} from "@mui/material";
 
 export default function GardenLayoutTable({ gardenLayout }) {
   const renderCell = (plant, colIndex) => (
     <TableCell key={colIndex} align="center">
       <div>{plant.name}</div>
-      <div>{plant.plantsPerSquare} plants/sq</div>
+      <div>{plant.plantPerSquare} plants/sq</div>
       <div>{plant.producePerSquare} produce/sq</div>
     </TableCell>
   );
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} className="py-3">
       <Table>
         <TableBody>
           {gardenLayout.map((row, rowIndex) => (
@@ -27,7 +27,7 @@ export default function GardenLayoutTable({ gardenLayout }) {
                 cell && cell.id ? (
                   renderCell(cell, colIndex)
                 ) : (
-                  <TableCell key={colIndex} align="center">
+                  <TableCell key={colIndex} align="center" className="border">
                     Empty
                   </TableCell>
                 )

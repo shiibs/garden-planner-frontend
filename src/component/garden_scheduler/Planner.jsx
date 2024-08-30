@@ -4,7 +4,7 @@ import Footer from "../home/Footer";
 
 export default function Planner({ userDetails, setUserDetails }) {
   return (
-    <div>
+    <div className="wrapper">
       <Header
         isHomePage={false}
         userDetails={userDetails}

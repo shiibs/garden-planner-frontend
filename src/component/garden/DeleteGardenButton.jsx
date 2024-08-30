@@ -25,10 +25,7 @@ export default function DeleteGardenButton({ setRefreshData }) {
   };
   return (
     <div>
-      <button
-        className="block mx-auto px-4 py-2 bg-red-500 text-white rounded-md"
-        onClick={handleDelete}
-      >
+      <button className="start-now-button bg-red-500" onClick={handleDelete}>
         Delete Garden
       </button>
     </div>
