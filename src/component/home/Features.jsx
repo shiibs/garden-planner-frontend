@@ -6,7 +6,7 @@ import dashboard from "../../assets/feature/dashboard.png";
 
 export default function Features() {
   return (
-    <div className="mt-40">
+    <div className="mt-20 md:mt-40">
       <h2 className="text-center mb-10 text-2xl font-bold text-gray-800">
         Why Garden Planner?
       </h2>

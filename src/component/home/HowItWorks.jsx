@@ -6,12 +6,16 @@ import vegetables from "../../assets/home/vegetables.png";
 
 export default function HomeHowItWorks() {
   return (
-    <div className="py-40">
+    <div className="py-20 md:py-40">
       <h2 className="text-center text-3xl font-bold">How It Works</h2>
       <div className="steps">
         <div className="step-box">
+          <div className="step md:hidden block">
+            <h3>Step 1</h3>
+            <p>Sign up with google.</p>
+          </div>
           <img src={login} alt="" />
-          <div className="step">
+          <div className="step hidden md:block">
             <h3>Step 1</h3>
             <p>Sign up with google.</p>
           </div>
@@ -24,8 +28,12 @@ export default function HomeHowItWorks() {
           <img src={select_plant} alt="" />
         </div>
         <div className="step-box">
+          <div className="step md:hidden block">
+            <h3>Step 3</h3>
+            <p>Get your custom garden layout and schedule.</p>
+          </div>
           <img src={garden_layout} alt="" />
-          <div className="step">
+          <div className="step hidden md:block">
             <h3>Step 3</h3>
             <p>Get your custom garden layout and schedule.</p>
           </div>
@@ -38,10 +46,22 @@ export default function HomeHowItWorks() {
           <img src={vegetables} alt="" />
         </div>
       </div>
-      <div className="flex justify-center">
-        <Link to={"/about"} className="learn-more-button">
-          Learn More
-        </Link>
+
+      <div className="cta text-center mt-20">
+        <h3 className="text-2xl md:text-3xl  font-bold text-gray-800 mb-4">
+          Ready to Start Your Garden?
+        </h3>
+        <p className="text-gray-600 mb-6 text-base md:text-xl max-w-[80%] mx-auto">
+          Sign up now and start your home gardening journey today!
+        </p>
+        <div className="flex flex-col sm:flex-row gap-5 justify-center max-w-[60%] mx-auto">
+          <Link to={"/garden/planner"} className="start-now-button">
+            Get Started
+          </Link>
+          <Link to={"/about"} className="learn-more-button">
+            Learn More
+          </Link>
+        </div>
       </div>
     </div>
   );

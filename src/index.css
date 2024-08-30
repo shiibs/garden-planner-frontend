@@ -22,6 +22,9 @@
     @apply inline-flex items-center justify-center rounded-full border border-transparent text-white bg-emerald-600 px-7 py-3 text-center text-base font-medium  hover:bg-emerald-800;
   }
 
+  .add-btn {
+    @apply inline-flex items-center gap-2 justify-center rounded-full border  px-6 py-3 text-center text-base font-medium;
+  }
   .feature-box {
     @apply border rounded-lg p-10;
   }
@@ -52,7 +55,7 @@
   }
 
   .step-box {
-    @apply flex justify-center gap-40 mx-auto p-10 items-center text-center;
+    @apply flex flex-col sm:flex-row justify-center gap-14 md:gap-40 mx-auto p-10 items-center text-center;
   }
 
   .step h3 {
@@ -63,7 +66,7 @@
     @apply text-sm md:text-xl;
   }
   .step-box img {
-    @apply w-72 h-72 object-cover mb-4;
+    @apply w-72 h-72 object-cover;
   }
 }
 

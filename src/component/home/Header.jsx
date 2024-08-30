@@ -16,7 +16,7 @@ export default function Header({ isHomePage, userDetails, setUserDetails }) {
       } ${isHomePage ? "top-0" : ""} ${isHomePage ? "" : "bg-gray-800"}`}
     >
       <div>
-        <h1 className="text-3xl pl-4">GO-GARDENING...</h1>
+        <h1 className="text-2xl md:text-3xl pl-4">GO-GARDENING...</h1>
       </div>
       <div className="flex gap-5">
         {!isHomePage ? (

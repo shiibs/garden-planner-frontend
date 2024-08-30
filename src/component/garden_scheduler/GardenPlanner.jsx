@@ -72,14 +72,16 @@ export default function GardenPlanner({ userDetails }) {
   };
 
   return (
-    <div className="mb-10">
+    <div className="mb-10  h-screen">
       {notification && (
         <Notification type={notification.type} message={notification.message} />
       )}
 
       {/* <Header isHomePage={false} /> */}
-      <div className="bg-gray-50 py-4">
-        <h3 className="text-center text-2xl pb-4 pt-3">Start now</h3>
+      <div className="py-4">
+        <h3 className="text-center font-bold text-3xl pb-6 pt-3 text-slate-800">
+          Garden Planner
+        </h3>
         <div className=" flex gap-3 justify-center text-xl">
           <label className="pr-2">Space in Square foot</label>
           <NumberDropdown
