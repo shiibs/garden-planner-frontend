@@ -1,27 +1,28 @@
 import { useState } from "react";
 import VegetableList from "./VegetableList";
 
-export default function AddPlantButton(
+export default function AddPlantButton({
   apiData,
   handleAddVegetable,
   addedPlantList,
   spaceUsed,
-  totalSpace
-) {
+  totalSpace,
+}) {
   const [showPopup, setShowPopup] = useState(false);
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
   };
-
   return (
     <div>
-      <button
-        className="start-now-button text-sm md:text-base"
-        onClick={togglePopup}
-      >
-        Add plants
-      </button>
+      <div>
+        <button
+          className="start-now-button text-sm md:text-base"
+          onClick={togglePopup}
+        >
+          Add plants
+        </button>
+      </div>
 
       {showPopup && (
         <div className="flex justify-between ">

@@ -96,14 +96,15 @@ export default function GardenPlanner({ userDetails }) {
             defaultValue={columns}
           />
         </div>
-        <div className="flex justify-center py-2 md:py-6 gap-2 md:gap-5">
+
+        <div className="flex py-2 md:p-6 justify-center gap-2 md:gap-6">
           <SpaceAvailable spaceUsed={spaceUsed} totalSpace={totalSpace} />
           <AddPlantButton
+            spaceUsed={spaceUsed}
+            totalSpace={totalSpace}
             apiData={apiData}
             handleAddVegetable={handleAddVegetable}
             addedPlantList={addedPlantList}
-            spaceUsed={spaceUsed}
-            totalSpace={totalSpace}
           />
         </div>
       </div>

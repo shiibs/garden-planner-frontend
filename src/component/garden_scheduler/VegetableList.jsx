@@ -14,18 +14,16 @@ export default function VegetableList({
       <div className="bg-white p-4 rounded-md shadow-md w-full relative md:max-w-[60%] mx-auto">
         <button
           onClick={togglePopup}
-          className="absolute top-2 right-2 text-gray-500"
+          className="absolute top-3 right-3 text-gray-500"
         >
           {" "}
           {/* Position close button absolutely */}
           <AiOutlineClose size={20} />
         </button>
         <h2 className="font-bold text-xl text-center pb-4">Plants</h2>
-        <SpaceAvailable
-          spaceUsed={spaceUsed}
-          totalSpace={totalSpace}
-          classNamepb-8
-        />
+        <div className="text-center pb-6">
+          <SpaceAvailable spaceUsed={spaceUsed} totalSpace={totalSpace} />
+        </div>
         <div className="max-h-[300px] overflow-y-auto">
           {apiData.length > 0 && // Check if apiData is not empty
             apiData.map((plant) => (
