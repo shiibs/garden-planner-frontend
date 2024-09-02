@@ -76,16 +76,15 @@ export default function NumberDropdown({
         onClick={() => setDropdownOpen(!dropdownOpen)}
         className="p-2 flex gap-1 border-emerald-700 border rounded-md"
       >
-        {selectedValue}{" "}
-        <img src={dropdown} alt="" className="md:h-7 md:w-7 h-5 w-5" />
+        {selectedValue} <i class="bi bi-caret-down-fill"></i>
       </button>
       {dropdownOpen && (
-        <div className="absolute bg-white px-2">
+        <div className="absolute bg-white px-2 max-h-[300px] overflow-y-auto">
           {numbers.map((number) => (
             <div
               key={number}
               onClick={() => handleSelectChange(number)}
-              className="p-2 cursor-pointer hover:bg-gray-200"
+              className="p-2 cursor-pointer hover:bg-gray-200 text-xl"
             >
               {number}
             </div>

@@ -8,6 +8,7 @@ import axios from "axios";
 import AddedVegetableList from "./AddedVegetableList";
 import Notification from "../common/Notification";
 import GenerateSchedule from "./GenerateSchedule";
+import AddPlantButton from "./AddPlantButton";
 
 export default function GardenPlanner({ userDetails }) {
   const [rows, setRows] = useState(10);
@@ -72,7 +73,7 @@ export default function GardenPlanner({ userDetails }) {
   };
 
   return (
-    <div className="mb-10 content">
+    <div className="mb-10 h-screen">
       {notification && (
         <Notification type={notification.type} message={notification.message} />
       )}
@@ -95,13 +96,16 @@ export default function GardenPlanner({ userDetails }) {
             defaultValue={columns}
           />
         </div>
-        <SpaceAvailable
-          spaceUsed={spaceUsed}
-          totalSpace={totalSpace}
-          apiData={apiData}
-          handleAddVegetable={handleAddVegetable}
-          addedPlantList={addedPlantList}
-        />
+        <div className="flex justify-center py-2 md:py-6 gap-2 md:gap-5">
+          <SpaceAvailable spaceUsed={spaceUsed} totalSpace={totalSpace} />
+          <AddPlantButton
+            apiData={apiData}
+            handleAddVegetable={handleAddVegetable}
+            addedPlantList={addedPlantList}
+            spaceUsed={spaceUsed}
+            totalSpace={totalSpace}
+          />
+        </div>
       </div>
       <AddedVegetableList
         addedPlantList={addedPlantList}

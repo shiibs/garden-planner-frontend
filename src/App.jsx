@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import GardenPlanner from "./component/garden_scheduler/GardenPlanner";

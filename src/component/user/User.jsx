@@ -39,9 +39,9 @@ export default function User({ userDetails, setUserDetails }) {
       {!isOpen && (
         <button
           onClick={toggleDropDown}
-          className="text-white md:px-4 px-2 text-base md:text-xl"
+          className="text-orange-500 text-xl md:text-2xl hover:text-white"
         >
-          User
+          <i class="bi bi-person-circle"></i>
         </button>
       )}
 

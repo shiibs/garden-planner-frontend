@@ -1,10 +1,13 @@
 import { AiOutlineClose } from "react-icons/ai";
+import SpaceAvailable from "./SpaceAvailable";
 
 export default function VegetableList({
   togglePopup,
   apiData,
   handleAddVegetable,
   addedPlantList,
+  spaceUsed,
+  totalSpace,
 }) {
   return (
     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-900 bg-opacity-50 z-50 ">
@@ -17,7 +20,12 @@ export default function VegetableList({
           {/* Position close button absolutely */}
           <AiOutlineClose size={20} />
         </button>
-        <h2 className="font-bold text-xl text-center pb-8">Plants</h2>
+        <h2 className="font-bold text-xl text-center pb-4">Plants</h2>
+        <SpaceAvailable
+          spaceUsed={spaceUsed}
+          totalSpace={totalSpace}
+          classNamepb-8
+        />
         <div className="max-h-[300px] overflow-y-auto">
           {apiData.length > 0 && // Check if apiData is not empty
             apiData.map((plant) => (
