@@ -17,7 +17,6 @@ export default function VegetableList({
           className="absolute top-3 right-3 text-gray-500"
         >
           {" "}
-          {/* Position close button absolutely */}
           <AiOutlineClose size={20} />
         </button>
         <h2 className="font-bold text-xl text-center pb-4">Plants</h2>

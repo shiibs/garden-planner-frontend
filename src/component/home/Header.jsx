@@ -6,7 +6,7 @@ import Login from "../user/Login";
 export default function Header({ isHomePage, userDetails, setUserDetails }) {
   return (
     <div
-      className={`flex w-full justify-between items-center h-20 px-6  z-10 text-white ${
+      className={`flex w-full justify-between items-center h-20 px-2 md:px-6  z-10 text-white ${
         isHomePage ? "absolute" : "relative"
       } ${isHomePage ? "top-0" : ""} ${isHomePage ? "" : "bg-gray-800"}`}
     >
@@ -17,7 +17,7 @@ export default function Header({ isHomePage, userDetails, setUserDetails }) {
         {!isHomePage ? (
           <Link
             to={"/"}
-            className="text-orange-500 text-xl md:text-2xl hover:text-white"
+            className="text-orange-500 hidden md:inline text-3xl hover:text-white"
           >
             <i class="bi bi-house-door-fill"></i>
           </Link>
@@ -25,7 +25,11 @@ export default function Header({ isHomePage, userDetails, setUserDetails }) {
           ""
         )}
         {userDetails.loginStatus ? (
-          <User userDetails={userDetails} setUserDetails={setUserDetails} />
+          <User
+            userDetails={userDetails}
+            setUserDetails={setUserDetails}
+            isHomePage={isHomePage}
+          />
         ) : (
           <Login />
         )}

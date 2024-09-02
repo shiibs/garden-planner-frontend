@@ -42,17 +42,6 @@
   body {
     @apply text-slate-800;
   }
-  .garden_list {
-    @apply relative top-20 right-5 bg-neutral-800  text-center rounded-md md:p-10 p-3;
-  }
-
-  .garden_list h3 {
-    @apply text-xl p-[20px];
-  }
-
-  .garden_list ul li {
-    @apply text-green-100 my-[1px];
-  }
 
   .step-box {
     @apply flex flex-col sm:flex-row justify-center gap-14 md:gap-40 mx-auto p-10 items-center text-center;
@@ -89,4 +78,38 @@ body {
 
 .content {
   flex: 1;
+}
+
+/* mobile view */
+
+.logo-container,
+.main-link-container {
+  border-bottom: 1px solid #b19696;
+}
+
+.main-link-container:hover,
+.sub-menu li a:hover {
+  color: #f68b21;
+}
+
+.main-link-container,
+.sub-menu li a {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.mobile-menu {
+  transition: transform 0.5s ease-in-out;
+  border-left: 2px solid #f68b21;
+}
+
+.sub-menu li {
+  border-bottom: 1px solid gray;
+  padding: 20px 0;
+}
+
+.main-link-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
