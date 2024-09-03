@@ -58,7 +58,7 @@ export default function User({ userDetails, setUserDetails, isHomePage }) {
               <h3>{userDetails.userName}</h3>
             </div>
             <button
-              className="close text-white text-xl md:text-2xl cursor-pointer z-20 hover:text-orange-500"
+              className=" text-white text-xl md:text-2xl cursor-pointer z-20 hover:text-orange-500"
               onClick={toggleDropDown}
             >
               <i className="bi bi-x-lg"></i>
