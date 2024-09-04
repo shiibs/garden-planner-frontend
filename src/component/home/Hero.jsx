@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className="absolute w-full h-full top-0 left-0 bg-slate-800/50"></div>
       <div className="absolute top-0 w-full h-full flex flex-col text-white text-center justify-center">
-        <h1 className="text-center md:max-w-[80%] mx-auto text-2xl md:text-4xl">
+        <h1 className="text-center md:max-w-[80%] mx-auto text-2xl md:text-4xl p-3">
           Plan, Grow, and Harvest Your Dream Vegetable Garden
         </h1>
         <p className="pt-3 text-sm md:text-xl max-w-[80%] md:max-w-[60%] mx-auto">

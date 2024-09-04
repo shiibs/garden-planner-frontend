@@ -38,15 +38,18 @@ export default function GardenLayout({ setRefreshData }) {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <div className="p-3 md:p-10">
       {garden && (
         <>
-          <h1 className="text-center py-5 text-gray-800">{garden.name}</h1>
+          <h1 className="text-center pb-5 text-gray-700 text-xl md:text-2xl">
+            {garden.name}
+          </h1>
+          <GardenLayoutTable gardenLayout={garden.gardenLayout} />
           <div className="px-5 text-gray-700">
-            <p className="font-bold pb-2">
+            <p className="font-bold pb-3">
               Start date: {formatDate(garden.startDate)}
             </p>
-            <p className="pb-4">
+            <p className="pb-5">
               <span className="font-bold">Planting:</span> Pre-soaking of seeds
               in warm water overnight before planting them helps to soften the
               seed coat and speed up the seed germination. The seed should be
@@ -56,7 +59,7 @@ export default function GardenLayout({ setRefreshData }) {
               a warm temperature leads to faster germination than very cold or
               scorching weather.
             </p>
-            <p className="pb-4">
+            <p className="pb-5">
               <span className="font-bold">Or</span> If you want to germinate the
               seeds separately in a tray use the same soil mix sow the seed in
               moist soil. Pre-soaking of seeds in warm water overnight before
@@ -76,26 +79,29 @@ export default function GardenLayout({ setRefreshData }) {
               and additional organic matter. Add organic growth promoters like
               cow dung manure, bone meal & fish meal.
             </p>
-            <GardenLayoutTable gardenLayout={garden.gardenLayout} />
+            {/* <div className="text-center text-2xl font-bold pt-10 pb-5">
+              Garden Layout
+            </div> */}
+
             <p className="py-5">
               <span className="font-bold">Watering:</span> Keep the soil moist
               always by slightly sprinkling the water over that area in the
               morning and evening.
             </p>
-            <p className="pb-4">
+            <p className="pb-5">
               <span className="font-bold">Fertilizer:</span> Usage of organic
               growth promoters like cow dung manure, bone meal & fish meal
               monthly usage help in improved flowering and overall health of the
               plant.
             </p>
-            <p className="pb-6">
+            <p className="pb-5">
               <span className="font-bold">Pest control:</span> Neem oil stands
               out as an excellent organic solution for your garden.
               Additionally, incorporating marigold plants into your garden not
               only adds vibrant colors but also serves as an effective natural
               pest repellent.
             </p>
-            <div className="flex justify-between">
+            <div className="flex flex-col sm:flex-row  justify-between">
               <p className="font-bold pb-6">
                 For replanting dates and other information refer to the email.
               </p>

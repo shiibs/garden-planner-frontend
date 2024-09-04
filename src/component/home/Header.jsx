@@ -8,10 +8,16 @@ export default function Header({ isHomePage, userDetails, setUserDetails }) {
     <div
       className={`flex w-full justify-between items-center h-20 px-2 md:px-6  z-10 text-white ${
         isHomePage ? "absolute" : "relative"
-      } ${isHomePage ? "top-0" : ""} ${isHomePage ? "" : "bg-gray-800"}`}
+      } ${isHomePage ? "top-0" : ""} ${isHomePage ? "" : "bg-slate-200"}`}
     >
       <div>
-        <h1 className="text-xl md:text-3xl">GO-GARDENING...</h1>
+        {isHomePage ? (
+          <h1 className="text-xl md:text-3xl">GO-GARDENING...</h1>
+        ) : (
+          <h1 className="text-xl md:text-3xl text-[#003d4d]">
+            GO-GARDENING...
+          </h1>
+        )}
       </div>
       <div className="flex gap-5">
         {!isHomePage ? (
