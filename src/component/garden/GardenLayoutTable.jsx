@@ -10,7 +10,7 @@ import {
 
 export default function GardenLayoutTable({ gardenLayout }) {
   const renderCell = (plant, colIndex) => (
-    <td className="whitespace-nowrap border-r px-6 py-4 font-medium border-neutral-500 ">
+    <td className="whitespace-nowrap border-r px-6 py-4 font-medium border-neutral-500 hover:bg-gray-200">
       <div className="text-sm md:text-base text-slate-800">{plant.name}</div>
       <div className="text-xs md:text-sm text-slate-700">
         Plants: {plant.plantPerSquare}

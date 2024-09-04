@@ -101,11 +101,13 @@ export default function GardenLayout({ setRefreshData }) {
               only adds vibrant colors but also serves as an effective natural
               pest repellent.
             </p>
-            <div className="flex flex-col sm:flex-row  justify-between">
+            <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start">
               <p className="font-bold pb-6">
                 For replanting dates and other information refer to the email.
               </p>
-              <DeleteGardenButton setRefreshData={setRefreshData} />
+              <div className="w-full flex justify-center sm:w-auto sm:justify-start">
+                <DeleteGardenButton setRefreshData={setRefreshData} />
+              </div>
             </div>
           </div>
         </>
