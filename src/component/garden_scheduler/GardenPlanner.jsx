@@ -73,7 +73,7 @@ export default function GardenPlanner({ userDetails }) {
   };
 
   return (
-    <div className="mb-10 h-screen">
+    <div className="mb-10 content">
       {notification && (
         <Notification type={notification.type} message={notification.message} />
       )}
@@ -119,7 +119,10 @@ export default function GardenPlanner({ userDetails }) {
 
       {addedPlantList.length > 0 && (
         <div className="flex justify-center my-3">
-          <button onClick={handleConfirm} className="start-now-button">
+          <button
+            onClick={handleConfirm}
+            className="confirm-btn text-base md:text-xl"
+          >
             Confirm
           </button>
         </div>

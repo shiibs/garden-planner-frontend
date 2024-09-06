@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import GardenPage from "./component/garden/GardenPage";
 import axios from "axios";
 import Planner from "./component/garden_scheduler/Planner";
+import HowItWorks from "./component/learn-more-page/HowItWorks";
 
 function App() {
   const [userDetails, setUserDetails] = useState({
@@ -79,6 +80,7 @@ function App() {
           <Planner userDetails={userDetails} setUserDetails={setUserDetails} />
         }
       ></Route>
+      <Route path="/about" element={<HowItWorks />} />
     </Routes>
   );
 }

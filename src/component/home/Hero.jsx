@@ -20,10 +20,13 @@ export default function Hero() {
           home vegetable garden, ensuring a continuous harvest all year round.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3 pt-3 mx-auto">
-          <Link to={"/garden/planner"} className="start-now-button">
+          <Link
+            to={"/garden/planner"}
+            className="btn1 bg-emerald-600 hover:bg-emerald-800"
+          >
             Start Planning
           </Link>
-          <Link to={"/about"} className="learn-more-button">
+          <Link to={"/about"} className="btn1">
             Learn More
           </Link>
         </div>

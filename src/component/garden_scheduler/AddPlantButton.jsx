@@ -17,7 +17,7 @@ export default function AddPlantButton({
     <div>
       <div>
         <button
-          className="start-now-button text-sm md:text-base"
+          className="btn1 bg-emerald-600 hover:bg-emerald-800 rounded-lg text-sm md:text-base"
           onClick={togglePopup}
         >
           Add plants

@@ -55,10 +55,13 @@ export default function HomeHowItWorks() {
           Sign up now and start your home gardening journey today!
         </p>
         <div className="flex flex-col sm:flex-row gap-5 justify-center max-w-[60%] mx-auto">
-          <Link to={"/garden/planner"} className="start-now-button">
+          <Link
+            to={"/garden/planner"}
+            className="btn1 bg-emerald-600 hover:bg-emerald-800"
+          >
             Get Started
           </Link>
-          <Link to={"/about"} className="learn-more-button">
+          <Link to={"/about"} className="btn1">
             Learn More
           </Link>
         </div>

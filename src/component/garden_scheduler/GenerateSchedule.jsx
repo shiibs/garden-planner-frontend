@@ -1,9 +1,7 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-
 import { useState } from "react";
-
 import axios from "axios";
 import Login from "../user/Login";
 import Spinner from "../common/Spinner";
@@ -15,10 +13,11 @@ export default function GenerateSchedule({
   addedPlantList,
   userDetails,
 }) {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(""); // Initially empty to allow date selection
   const navigate = useNavigate(); // Get history object
   const [loading, setLoading] = useState(false);
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
+
+  const today = new Date().toISOString().split("T")[0];
 
   const {
     register,
@@ -58,51 +57,50 @@ export default function GenerateSchedule({
       {userDetails.loginStatus ? (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-900 bg-opacity-50 z-50">
           <div className="bg-white p-4 rounded-md shadow-md max-w-3xl relative">
-            {" "}
-            {/* Apply relative positioning */}
             <button
               onClick={handleConfirm}
-              className="absolute top-2 right-2 text-gray-500"
+              className="absolute top-5 right-5 text-orange-500 text-xl md:text-2xl cursor-pointer z-20 hover:white"
             >
-              {" "}
-              {/* Position close button absolutely */}
-              <AiOutlineClose size={20} />
+              <i className="bi bi-x-lg"></i>
             </button>
-            <form
-              onSubmit={handleSubmit(saveForm)}
-              className="text-center mt-5"
-            >
-              {" "}
-              <label htmlFor="gardenName" className="pr-11">
-                Garden Name
-              </label>
-              <input
-                type="gardenName"
-                id="gardenName"
-                placeholder="Enter name"
-                className={`inline-block border ${
-                  errors.gardenName && "error"
-                }`}
-                {...register("gardenName", {
-                  required: "Garden name cannot be empty",
-                })}
-              />
-              {errors.name && (
-                <p className="text-red-500">{errors.gardenName.message}</p>
-              )}
-              <div className=" flex gap-2 pt-3">
-                {" "}
-                <label htmlFor="startDate">Start Date</label>
+
+            <form onSubmit={handleSubmit(saveForm)} className="p-8">
+              <div className="mb-5">
+                <label
+                  htmlFor="gardenName"
+                  className="text-start block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Garden Name
+                </label>
+                <input
+                  type="text"
+                  id="gardenName"
+                  placeholder="Enter name"
+                  className={`input-btn ${errors.gardenName && "error"}`}
+                  {...register("gardenName", {
+                    required: "Garden name cannot be empty",
+                  })}
+                />
+                {errors.gardenName && (
+                  <p className="text-red-500">{errors.gardenName.message}</p>
+                )}
+              </div>
+
+              <div className="mb-5">
+                <label
+                  htmlFor="startDate"
+                  className="text-start block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Start Date
+                </label>
                 <input
                   type="date"
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
                   id="startDate"
-                  className={`inline-block border ${
-                    errors.startDate && "error"
-                  }`}
+                  min={today} // Only allow today and future dates
+                  onChange={(e) => setStartDate(e.target.value)} // Update the date value
+                  className={`input-btn ${errors.startDate && "error"}`}
                   {...register("startDate", {
-                    required: "Please Select a date",
+                    required: "Please select a date",
                   })}
                 />
                 {errors.startDate && (
@@ -110,13 +108,9 @@ export default function GenerateSchedule({
                 )}
               </div>
               {loading && <Spinner />}
-              <button
-                type="submit"
-                className="block mx-auto mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
-              >
+              <button type="submit" className="confirm-btn">
                 Generate Schedule
-              </button>{" "}
-              {/* Center the button */}
+              </button>
             </form>
           </div>
         </div>
@@ -127,8 +121,6 @@ export default function GenerateSchedule({
               onClick={handleConfirm}
               className="absolute top-1 right-1 text-gray-500"
             >
-              {" "}
-              {/* Position close button absolutely */}
               <AiOutlineClose size={10} />
             </button>
             <Login />
