@@ -17,7 +17,7 @@ export default function AddPlantButton({
     <div>
       <div>
         <button
-          className="btn1 bg-emerald-600 hover:bg-emerald-800 rounded-lg text-sm md:text-base"
+          className="confirm-btn bg-emerald-600 hover:bg-emerald-800 text-base md:text-xl"
           onClick={togglePopup}
         >
           Add plants

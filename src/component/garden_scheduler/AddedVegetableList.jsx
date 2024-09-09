@@ -35,18 +35,18 @@ export default function AddedVegetableList({
           <h4 key={plant.id} className=" py-1 px-4">
             <div className="border-b mb-2">
               <div className="flex justify-between">
-                <p className="font-bold hover:text-blue-700 ">{plant.name} </p>
-                <div className="flex gap-2">
+                <p className="font-bold hover:text-green-700 ">{plant.name} </p>
+                <div className="flex gap-2 text-base md:text-xl">
                   <button
                     onClick={() => handleDecrement(plant.id)}
-                    className="hover:text-blue-700 cursor-pointer"
+                    className="hover:text-blue-700 cursor-pointer  text-orange-500"
                   >
                     <i class="bi bi-dash-circle"></i>
                   </button>{" "}
                   <span className="py-1">{plant.count}</span>{" "}
                   <button
                     onClick={() => handleIncrement(plant.id)}
-                    className="hover:text-blue-700 cursor-pointer"
+                    className="hover:text-green-700 cursor-pointer  text-orange-500"
                   >
                     <i class="bi bi-plus-circle"></i>
                   </button>
